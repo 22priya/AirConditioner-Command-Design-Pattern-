@@ -1,0 +1,27 @@
+In Command Pattern there are 3 components
+1. Receiver
+2. Command
+3. Invoker
+
+1.Receiver: This is the object on which the command will act. The command will executed on this   object.
+The request that we encapsulate in command and called on receiver. Here receiver is AirConditioner class.
+The commands are executed on AirCondition object. (Receiver object.)
+
+2. Command: This is an interface . It declares methods for executing an action.
+We can implement various commands by this command interface.
+Every command object holds a reference of Receiver object.
+Here in our all 3 command classes we have a reference of AC class
+
+3. Invoker: It initiates request. It has a reference of command object and triggers execution of command.
+Here invoker is Remote class. It has a reference of Command.
+The pressButton() method of invoker initiated the command.
+
+How to identify when to use this pattern:
+
+1. When you see that requests that we are sending needs to be encapsulated as objects.
+And you see that in request we need to send parameter.
+
+2.Need for Undo and Redo operation.
+You can maintain a history of commands by storing command objects in a stack.
+
+3. When you need to log and audit all commands that were executed.

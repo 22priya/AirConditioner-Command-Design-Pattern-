@@ -13,11 +13,14 @@ public class AirConditionerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AirConditionerApplication.class, args);
+
 		Remote remote=new Remote();
 		AirConditioner ac=new AirConditioner();
+
 		Command turnOnACCmd=new TurnOnACCommand(ac);
 		Command turnOffACCmd=new TurnOffACCommand(ac);
 		Command setTemperatureCmd=new UpdateTemperatureCommand(ac,25);
+
 		remote.setCommand(turnOnACCmd);
 		remote.pressButton();
 
